@@ -28,7 +28,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build and test with Maven for EurekaServer
-        run: |
-          cd EurekaServer
-          mvn clean verify
-          cd ..
+      run: |
+        cd EurekaServer
+        mvn clean verify
+        cd ..
