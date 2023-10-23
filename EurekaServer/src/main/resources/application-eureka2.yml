@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: eureka-server
+  config:
+    activate:
+      on-profile: eureka2
+
+server:
+  port: 8762
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
