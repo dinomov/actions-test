@@ -1,9 +1,6 @@
 spring:
   application:
     name: eureka-server
-  config:
-    activate:
-      on-profile: eureka1
 
 server:
   port: 8761

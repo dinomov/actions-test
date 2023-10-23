@@ -8,6 +8,9 @@ class EurekaServerApplicationTests {
 
 	@Test
 	void contextLoads() {
+		String str = "hello world";
+
+		Assertions.assertEquals("hello world", str);
 	}
 
 }

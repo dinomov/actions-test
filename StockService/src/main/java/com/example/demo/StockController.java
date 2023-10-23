@@ -6,8 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Profile("instance1")
-public class Stock1Controller {
+public class StockController {
     @RequestMapping("/stock/{productNumber}")
     public Integer getProductAmount(@PathVariable("productNumber") Integer productNumber)
     {

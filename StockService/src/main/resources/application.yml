@@ -1,9 +1,6 @@
 spring:
   application:
     name: StockService
-  config:
-    activate:
-      on-profile: instance1
 
 server:
   port: 8081
@@ -11,4 +8,4 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+      defaultZone: http://localhost:8761/eureka/
