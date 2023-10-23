@@ -39,6 +39,6 @@ jobs:
     - name: Build Docker image for EurekaServer
       run: |
         cd EurekaServer
-        docker build -t dinomov/EurekaServer:latest ./EurekaServer
-        docker push dinomov/EurekaServer:latest
+        docker build -t dinomov/eurekaserver:latest ./EurekaServer
+        docker push dinomov/eurekaserver:latest
 
