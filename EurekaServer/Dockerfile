@@ -6,6 +6,8 @@ WORKDIR /app
 
 # Copy the Maven project (including the pom.xml file) to the container
 COPY . /app
+COPY target/EurekaServer-0.0.1-SNAPSHOT.jar /app/eureka-server.jar
+
 
 # Build the application with Maven
 RUN mvn clean install
@@ -14,4 +16,4 @@ RUN mvn clean install
 EXPOSE 8761
 
 # Command to run the application
-CMD ["java", "-jar", "target/eureka-server.jar"]
+CMD ["java", "-jar", "eureka-server.jar"]
