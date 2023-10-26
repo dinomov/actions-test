@@ -1,17 +1,17 @@
 version: '3'
 
 services:
-  service1:
+  eureka-server:
     image: dinomov/eureka-server:latest
     ports:
       - "8761:8761" 
 
-  service2:
+  product-service:
     image: dinomov/product-service:latest
     ports:
       - "8087:8087"  
 
-  service3:
+  stock-service:
     image: dinomov/stock-service:latest
     ports:
       - "8088:8088" 
