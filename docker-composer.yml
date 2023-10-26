@@ -6,17 +6,21 @@ services:
     ports:
       - "8761:8761" 
 
+  stock-service:
+    image: dinomov/stock-service:latest
+    depends_on:
+      - eureka-server
+    entrypoint: ["/app/wait-for-it.sh", "localhost", "8671", "java", "-jar", "/app/stock-service.jar"]
+    ports:
+      - "8088:8088" 
+
   product-service:
     image: dinomov/product-service:latest
     depends_on:
       - eureka-server
       - stock-service
+    entrypoint: ["/app/wait-for-it.sh", "localhost", "8671", "java", "-jar", "/app/stock-service.jar"]
     ports:
       - "8087:8087"  
 
-  stock-service:
-    image: dinomov/stock-service:latest
-    depends_on:
-      - eureka-server
-    ports:
-      - "8088:8088" 
+  
