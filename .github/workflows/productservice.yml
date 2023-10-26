@@ -32,3 +32,11 @@ jobs:
         cd ProductService
         mvn clean verify
         cd ..
+
+    - name: Login to Docker Hub
+      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_ACCESS_TOKEN }}
+
+    - name: Build Docker image for ProductService
+      run: |
+        docker build -t dinomov/product-service:latest ./ProductService
+        docker push dinomov/product-service:latest

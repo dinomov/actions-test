@@ -32,3 +32,11 @@ jobs:
         cd StockService
         mvn clean verify
         cd ..
+
+    - name: Login to Docker Hub
+      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_ACCESS_TOKEN }}
+
+    - name: Build Docker image for StockService
+      run: |
+        docker build -t dinomov/stock-service:latest ./StockService
+        docker push dinomov/stock-service:latest

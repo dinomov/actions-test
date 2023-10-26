@@ -5,13 +5,10 @@ FROM openjdk:17
 WORKDIR /app
 
 # Copy the Maven project (including the pom.xml file) to the container
-COPY . /app
+COPY target/demo-0.0.1-SNAPSHOT.jar /app/product-service.jar
 
-# Build the application with Maven
-RUN mvn clean install
-
-# Expose the port your microservice will listen on (port 8080 in this case)
-EXPOSE 8080
+# Expose the port your microservice will listen on (port 8087 in this case)
+EXPOSE 8087
 
 # Command to run the application
-CMD ["java", "-jar", "target/product-service.jar"]
+CMD ["java", "-jar", "/app/product-service.jar"]
