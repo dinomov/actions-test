@@ -8,10 +8,15 @@ services:
 
   product-service:
     image: dinomov/product-service:latest
+    depends_on:
+      - eureka-server
+      - stock-service
     ports:
       - "8087:8087"  
 
   stock-service:
     image: dinomov/stock-service:latest
+    depends_on:
+      eureka-server
     ports:
       - "8088:8088" 
