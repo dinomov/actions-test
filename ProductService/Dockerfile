@@ -9,7 +9,7 @@ COPY target/demo-0.0.1-SNAPSHOT.jar /app/product-service.jar
 
 RUN cd ..
 
-COPY ../wait-for-it.sh /app/wait-for-it.sh
+COPY wait-for-it.sh /app/wait-for-it.sh
 
 # Expose the port your microservice will listen on (port 8087 in this case)
 EXPOSE 8087
