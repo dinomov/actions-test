@@ -7,6 +7,8 @@ WORKDIR /app
 # Copy the Maven project (including the pom.xml file) to the container
 COPY target/demo-0.0.1-SNAPSHOT.jar /app/stock-service.jar
 
+RUN cd ..
+
 COPY ../wait-for-it.sh /app/wait-for-it.sh
 
 # Expose the port your microservice will listen on (port 8088 in this case)
